@@ -136,7 +136,7 @@ export default function App() {
             t('sections.whoWeAre.text1'),
             t('sections.whoWeAre.text2'),
           ]}
-          imgSrc="src/images/diamonds_Money.png" // <-- piccola immagine, import da src
+          imgSrc="/images/diamonds_Money.png" // <-- piccola immagine, import da src
           imagePosition="left"
           icon={<Users className="w-20 h-20 text-gold-solid mb-4" />}
           bgClass="bg-[#FAF4E8]"
@@ -151,7 +151,7 @@ export default function App() {
             t('sections.mission.text1'),
             t('sections.mission.text2'),
           ]}
-          imgSrc="src/images/community.png" // <-- piccola immagine, import da src
+          imgSrc="/community.png" // <-- piccola immagine, import da src
           imagePosition="right"
           icon={<Gem className="w-20 h-20 text-gold-solid mb-4" />}
           bgClass="bg-[#FFFFFF]"
@@ -166,7 +166,7 @@ export default function App() {
             t('sections.competitiveEdge.text1'),
             t('sections.competitiveEdge.text2'),
           ]}
-          imgSrc="src/images/rocket.png" // <-- piccola immagine, import da src
+          imgSrc="/images/rocket.png" // <-- piccola immagine, import da src
           imagePosition="left"
           icon={<Rocket className="w-20 h-20 text-gold-solid mb-4" />}
           bgClass="bg-[#FAF4E8]"
