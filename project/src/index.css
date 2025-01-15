@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
+  /* --------------------------------------------
+     Testo e colore gold, come già avevi prima 
+  ---------------------------------------------*/
   .text-gold {
     @apply bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] bg-clip-text text-transparent;
   }
@@ -13,7 +16,7 @@
     @apply shadow-[0_0_20px_rgba(212,175,55,0.3)];
   }
 
-  /* Riduci l'effetto parallax/animate se vuoi qualcosa di più minimal */
+  /* Eventuali animazioni */
   @keyframes float-slow {
     0%, 100% {
       transform: translateY(0);
@@ -22,17 +25,24 @@
       transform: translateY(-15px);
     }
   }
-
-  @keyframes geoMove {
-    0% {
-      transform: translate(0, 0) rotate(var(--tw-rotate)) scale(1);
-    }
-    100% {
-      transform: translate(20px, 10px) rotate(var(--tw-rotate)) scale(1.02);
-    }
-  }
   .animate-float-slow {
     animation: float-slow 6s ease-in-out infinite;
   }
-}
 
+  /* --------------------------------------------
+     Utility per sfondo responsive
+     Di default (mobile) -> background_mobile.png
+     Da md: in su (>=768px) -> background.png
+  ---------------------------------------------*/
+  .bg-custom {
+    @apply relative min-h-screen text-gray-800 overflow-x-hidden
+           bg-cover bg-center bg-no-repeat bg-fixed;
+    background-image: url("./src/images/background_mobile.png");
+  }
+
+  @screen md {
+    .bg-custom {
+      background-image: url("./src/images/background.png");
+    }
+  }
+}

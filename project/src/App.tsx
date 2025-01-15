@@ -2,13 +2,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+// Import delle tue componenti
 import { Button } from './components/Button';
 import { TokenStats } from './components/TokenStats';
 import { Roadmap } from './components/Roadmap';
 import { HalfImageSection } from './components/HalfImageSection';
 import { SolanaSection } from './components/SolanaSection';
 
-import background from './images/background.png';
+import X_Logo from './images/X_logo.svg';
+import tg_logo from './images/tg_logo.png';
+import solsale from './images/solsale_logo.png';
 import logoSolo from './images/logo_solo.png';
 import diamondsLogo from './images/logo_solo.png';
 
@@ -31,7 +34,7 @@ function SectionDivider() {
       >
         <img
           src={diamondsLogo}
-          alt={t('divider.diamondAlt')} // <--- traducibile
+          alt={t('divider.diamondAlt')} 
           className="w-8 h-8 object-contain"
         />
       </div>
@@ -43,23 +46,55 @@ export default function App() {
   const { t } = useTranslation();
 
   return (
-    <div
-      className="relative min-h-screen text-gray-800 overflow-x-hidden"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
-      }}
-    >
+    // Usa la nostra utility "bg-custom" per gestire sfondo mobile/desktop
+    <div className="bg-custom">
+      
       {/* HEADER */}
       <header className="relative z-10 w-full max-w-7xl mx-auto px-6 py-4 flex justify-end items-center">
-  <Button className="px-3 py-1 text-sm">
-    {t('header.whitepaper')}
-  </Button>
-</header>
-
+        <section className="relative z-10">
+          <div className="max-w-7xl mx-auto px-6 flex justify-center items-center gap-8">
+            {/* Link a X */}
+            <a
+              href="https://x.com/DmnsGroup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-transform"
+            >
+              <img
+                src={X_Logo}
+                alt="X Social"
+                className="w-8 h-8 object-contain"
+              />
+            </a>
+            {/* Link a Telegram */}
+            <a
+              href="https://t.me/dmnstoken"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-transform"
+            >
+              <img
+                src={tg_logo}
+                alt="Telegram"
+                className="w-8 h-8 object-contain"
+              />
+            </a>
+            {/* Link a SolSale */}
+            <a
+              href="https://solsale.app/presale/6G1jXBziz5JJHUP88R9db2fG66fUWHDm56fAoGen7Dz8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-transform"
+            >
+              <img
+                src={solsale}
+                alt="SolSale"
+                className="w-10 h-10 object-contain"
+              />
+            </a>
+          </div>
+        </section>
+      </header>
 
       {/* HERO */}
       <section className="relative z-10 py-16 text-center">
@@ -73,14 +108,12 @@ export default function App() {
             {t('hero.title')}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 px-4 leading-relaxed">
-            {/* Unione del testo: prima parte + le due righe successive */}
             <span
               dangerouslySetInnerHTML={{
                 __html: t('hero.descriptionPart1'),
               }}
             />
             <br />
-
           </p>
         </div>
       </section>
@@ -166,13 +199,54 @@ export default function App() {
             className="text-gray-700 text-lg mb-6 leading-relaxed"
             dangerouslySetInnerHTML={{ __html: t('cta.text') }}
           />
-          <Button variant="primary" className="px-6 py-3">
+          <Button
+            variant="primary"
+            onClick={() =>
+              window.open(
+                'https://solsale.app/presale/6G1jXBziz5JJHUP88R9db2fG66fUWHDm56fAoGen7Dz8',
+                '_blank'
+              )
+            }
+            className="px-6 py-3"
+          >
             {t('cta.button')}
           </Button>
         </div>
       </section>
 
       <SectionDivider />
+
+      {/* SEZIONE SOCIAL */}
+      <section className="relative z-10 py-8">
+        <div className="max-w-7xl mx-auto px-6 flex justify-center gap-8">
+          {/* Link a X */}
+          <a
+            href="https://x.com/DmnsGroup"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
+            <img
+              src={X_Logo}
+              alt="X Social"
+              className="w-8 h-8 object-contain"
+            />
+          </a>
+          {/* Link a Telegram */}
+          <a
+            href="https://t.me/dmnstoken"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:scale-110 transition-transform"
+          >
+            <img
+              src={tg_logo}
+              alt="Telegram"
+              className="w-9 h-9 object-contain"
+            />
+          </a>
+        </div>
+      </section>
 
       {/* FOOTER */}
       <footer className="relative z-10 py-8 text-center">

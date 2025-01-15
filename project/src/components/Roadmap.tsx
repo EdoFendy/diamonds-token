@@ -12,6 +12,13 @@ const roadmapData = [
       'Fair Launch on SolSale',
       'Listings: CMC / CG / DexScreener / Dextools',
       'Airdrop Announcement',
+
+    ],
+  },
+  {
+    date: 'Q2 (Apr - Jun)',
+    objective: '25,000 HOLDERS',
+    items: [
       'Website Launch with Courses',
       'Wallet dApp',
       'Listing on Top 20 CEX',
@@ -20,31 +27,23 @@ const roadmapData = [
     ],
   },
   {
-    date: 'Q2 (Apr - Jun)',
-    objective: '25,000 HOLDERS',
+    date: 'Q3 (Jul - Sep)',
+    objective: '60,000 HOLDERS',
     items: [
-      // Aggiungi le voci che vuoi mantenere
       'DAO Development',
       'Listing on Top 10 CEX',
       'Airdrop Distribution + Premium Academy VIP',
       'NFT Collection Announcement + DAO Beta',
-    ],
-  },
-  {
-    date: 'Q3 (Jul - Sep)',
-    objective: '60,000 HOLDERS',
-    items: [
-      'Full DAO Launch',
-      'dApp Sentiment Score',
-      'NFT Collection Launch + NFT Marketplace Announcement'
+      
     ],
   },
   {
     date: 'Q4 (Oct - Dec)',
     objective: '100,000 HOLDERS',
     items: [
-      // Se vuoi aggiungere step, mettili qui
-      // O lasciali vuoti se non hai definito nulla
+      'Full DAO Launch',
+      'dApp Sentiment Score',
+      'NFT Collection Launch + NFT Marketplace Announcement'
     ],
   },
 ];
