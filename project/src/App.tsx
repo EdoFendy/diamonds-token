@@ -151,7 +151,7 @@ export default function App() {
             t('sections.mission.text1'),
             t('sections.mission.text2'),
           ]}
-          imgSrc="/community.png" // <-- piccola immagine, import da src
+          imgSrc="/images/community.png" // <-- piccola immagine, import da src
           imagePosition="right"
           icon={<Gem className="w-20 h-20 text-gold-solid mb-4" />}
           bgClass="bg-[#FFFFFF]"
