@@ -34,19 +34,7 @@
      Di default (mobile) -> background_mobile.png
      Da md: in su (>=768px) -> background.png
   ---------------------------------------------*/
-  .bg-custom {
-    @apply relative min-h-screen text-gray-800 overflow-x-hidden
-           bg-cover bg-center bg-no-repeat;
-    /* Start path with / to reference from public folder */
-    background-image: url("/images/background_mobile.png");
-  }
-  
-  @screen md {
-    .bg-custom {
-      @apply bg-fixed;
-      background-image: url("/images/background.png"); 
-    }
-  }
+
   
   
 }

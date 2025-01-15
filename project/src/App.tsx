@@ -50,7 +50,15 @@ export default function App() {
   return (
     <>
       {/* Wrapper con lo sfondo gestito da Tailwind */}
-      <div className="bg-custom">
+      <div className="
+  min-h-screen 
+  bg-fixed 
+  bg-cover
+  bg-center 
+  bg-no-repeat 
+  bg-[url('/images/background_mobile.png')]
+  md:bg-[url('/images/background.png')]
+">
         {/* HEADER */}
         <header className="relative z-10 w-full max-w-7xl mx-auto px-6 py-4 flex justify-end items-center">
           <section className="relative z-10">
