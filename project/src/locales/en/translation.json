@@ -1,0 +1,115 @@
+{
+    "header": {
+      "whitepaper": "Whitepaper"
+    },
+  
+    "hero": {
+      "bigLogoAlt": "DMNS Big Logo",
+      "title": "DMNS TOKEN",
+      "descriptionPart1": "We are <strong>DMNS</strong>, innovators shaping the future through blockchain and decentralization. Our mission is to revolutionize the economy with a fair ecosystem powered by our token."
+
+    },
+  
+    "button": {
+      "fairLaunch": "Participate in Fair Launch"
+    },
+  
+    "tokenStats": {
+      "totalSupplyTitle": "Total Supply",
+      "totalSupplyValue": "1,000,000,000 DMNS",
+      "fairLaunchTitle": "Fair Launch",
+      "fairLaunchDesc": "No Pre-sale Advantage",
+      "communityTitle": "Community",
+      "communityDesc": "100% Decentralized"
+    },
+  
+    "divider": {
+      "diamondAlt": "Divider Diamond"
+    },
+  
+    "sections": {
+      "whoWeAre": {
+        "title": "Who We Are",
+        "text1": "We are a global and decentralized community aiming to educate, inform, and engage people to promote financial autonomy for everyone.",
+        "text2": "Through education and innovation, we intend to revolutionize how we manage money and resources, reducing reliance on centralized institutions. DiamondToken is the core of our project—our decentralized currency."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "text1": "Our goal is to provide privileged and timely access to growth opportunities, overcoming common pitfalls that limit crypto gains—like lack of information or late market entry.",
+        "text2": "We are the first to buy our own token and share these opportunities, enabling our community members to reap benefits before they become widely available."
+      },
+      "competitiveEdge": {
+        "title": "Our Competitive Edge",
+        "text1": "We chose Solana to launch our token because it can handle high transaction volumes quickly and inexpensively, ensuring an optimal user experience and a scalable network for the project’s growth.",
+        "text2": "Example: A token created on 07/04/2024 managed to increase its effective value by +54,000% in less than 20 days."
+      }
+    },
+  
+    "solana": {
+      "title": "Why Solana?",
+      "paragraph1": "Solana is a next-generation blockchain designed to deliver exceptionally fast transactions at ultra-low costs. Leveraging its unique <strong>Proof-of-History</strong> mechanism, Solana provides scalability and security without sacrificing decentralization.",
+      "speedTitle": "Speed",
+      "speedDesc": "Up to 65,000 TPS with near-instant finality.",
+      "costTitle": "Cost",
+      "costDesc": "Transactions from as low as $0.00025 each.",
+      "ecosystemTitle": "Ecosystem",
+      "ecosystemDesc": "A fast-growing DeFi universe with countless DApps.",
+      "liquidityTitle": "High Liquidity:",
+      "liquidityText1": "Solana’s DeFi ecosystem boasts a robust and ever-expanding liquidity pool. Major decentralized exchanges (DEXes) like Raydium, Serum, and Orca facilitate high-volume trading with minimal slippage, providing traders and liquidity providers with deep pools and rapid settlement.",
+      "liquidityText2": "This abundance of liquidity not only enhances trading efficiency but also opens the door to yield farming, staking, and lending opportunities across the network, making Solana a vibrant hub for decentralized finance."
+    },
+  
+    "roadmapSection": {
+      "title": "Roadmap",
+      "q1": {
+        "date": "Q1 (Jan - Mar)",
+        "objective": "5,000 HOLDERS",
+        "items": [
+          "Community + GitBook",
+          "Fair Launch on SolSale",
+          "Listings: CMC / CG / DexScreener / Dextools",
+          "Airdrop Announcement",
+          "Website Launch with Courses",
+          "Wallet dApp",
+          "Listing on Top 20 CEX",
+          "Airdrop Activation",
+          "Premium Academy + DAO Announcement"
+        ]
+      },
+      "q2": {
+        "date": "Q2 (Apr - Jun)",
+        "objective": "25,000 HOLDERS",
+        "items": [
+          "DAO Development",
+          "Listing on Top 10 CEX",
+          "Airdrop Distribution + Premium Academy VIP",
+          "NFT Collection Announcement + DAO Beta"
+        ]
+      },
+      "q3": {
+        "date": "Q3 (Jul - Sep)",
+        "objective": "60,000 HOLDERS",
+        "items": [
+          "Full DAO Launch",
+          "dApp Sentiment Score",
+          "NFT Collection Launch + NFT Marketplace Announcement"
+        ]
+      },
+      "q4": {
+        "date": "Q4 (Oct - Dec)",
+        "objective": "100,000 HOLDERS",
+        "items": []
+      }
+    },
+  
+    "cta": {
+      "title": "Our Community Is Growing Fast",
+      "text": "It’s time to take action. Join the Fair Launch on <strong>SolSale.app</strong> and be part of DMNS. The DMNS token is now in Fair Launch.",
+      "button": "Participate in Fair Launch"
+    },
+  
+    "footer": {
+      "rights": "© 2025 DMNS. All rights reserved."
+    }
+  }
+  

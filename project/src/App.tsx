@@ -1,6 +1,7 @@
 // App.tsx
-
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { Button } from './components/Button';
 import { TokenStats } from './components/TokenStats';
 import { Roadmap } from './components/Roadmap';
@@ -13,14 +14,12 @@ import diamondsLogo from './images/logo_solo.png';
 
 import { Gem, Rocket, Users } from 'lucide-react';
 
-// Divider with the diamond logo in the center
 function SectionDivider() {
+  const { t } = useTranslation();
+
   return (
     <div className="my-12 flex items-center justify-center relative">
-      {/* Horizontal line */}
       <div className="absolute w-full h-[2px] bg-[#d4af37]/40" />
-
-      {/* Diamond logo in the center */}
       <div
         className="
           relative px-4 py-2 bg-white/80 backdrop-blur-sm
@@ -32,7 +31,7 @@ function SectionDivider() {
       >
         <img
           src={diamondsLogo}
-          alt="Divider Diamond"
+          alt={t('divider.diamondAlt')} // <--- traducibile
           className="w-8 h-8 object-contain"
         />
       </div>
@@ -41,6 +40,8 @@ function SectionDivider() {
 }
 
 export default function App() {
+  const { t } = useTranslation();
+
   return (
     <div
       className="relative min-h-screen text-gray-800 overflow-x-hidden"
@@ -49,41 +50,37 @@ export default function App() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        // Se vuoi lo sfondo fisso con effetto parallax,
-        // mantieni backgroundAttachment: 'fixed', altrimenti rimuovi.
         backgroundAttachment: 'fixed',
       }}
     >
       {/* HEADER */}
-      <header className="relative z-10 w-full max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <img src={logoSolo} alt="DMNS Logo" className="w-24 h-auto object-contain" />
-        <div className="flex gap-2">
-          <Button variant="secondary" className="px-3 py-1 text-sm">
-            Whitepaper
-          </Button>
-        </div>
-      </header>
+      <header className="relative z-10 w-full max-w-7xl mx-auto px-6 py-4 flex justify-end items-center">
+  <Button className="px-3 py-1 text-sm">
+    {t('header.whitepaper')}
+  </Button>
+</header>
+
 
       {/* HERO */}
       <section className="relative z-10 py-16 text-center">
         <div className="max-w-3xl mx-auto">
           <img
             src={logoSolo}
-            alt="DMNS Big Logo"
+            alt={t('hero.bigLogoAlt')}
             className="mx-auto w-36 md:w-44 h-auto object-contain mb-6"
           />
           <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6">
-            DMNS TOKEN
+            {t('hero.title')}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 px-4 leading-relaxed">
-            We are <strong>DMNS</strong>, innovators shaping the future through
-            blockchain and decentralization. 
-            Our mission is to revolutionize the economy with 
-            a fair ecosystem powered by our token.
+            {/* Unione del testo: prima parte + le due righe successive */}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: t('hero.descriptionPart1'),
+              }}
+            />
             <br />
-            Don’t follow—lead. Don’t dream—create.
-            <br />
-            Join DMNS. Build the future.
+
           </p>
         </div>
       </section>
@@ -99,10 +96,10 @@ export default function App() {
 
       {/* WHO WE ARE */}
       <HalfImageSection
-        title="Who We Are"
+        title={t('sections.whoWeAre.title')}
         text={[
-          "We are a global and decentralized community aiming to educate, inform, and engage people to promote financial autonomy for everyone.",
-          "Through education and innovation, we intend to revolutionize how we manage money and resources, reducing reliance on centralized institutions. DiamondToken is the core of our project—our decentralized currency.",
+          t('sections.whoWeAre.text1'),
+          t('sections.whoWeAre.text2'),
         ]}
         imgSrc="src/images/diamonds_Money.png"
         imagePosition="left"
@@ -112,12 +109,12 @@ export default function App() {
 
       <SectionDivider />
 
-      {/* COMMUNITY DRIVEN / MISSION */}
+      {/* MISSION */}
       <HalfImageSection
-        title="Our Mission"
+        title={t('sections.mission.title')}
         text={[
-          "Our goal is to provide privileged and timely access to growth opportunities, overcoming common pitfalls that limit crypto gains—like lack of information or late market entry.",
-          "We are the first to buy our own token and share these opportunities, enabling our community members to reap benefits before they become widely available."
+          t('sections.mission.text1'),
+          t('sections.mission.text2'),
         ]}
         imgSrc="src/images/community.png"
         imagePosition="right"
@@ -127,12 +124,12 @@ export default function App() {
 
       <SectionDivider />
 
-      {/* COMPETITIVE ADVANTAGE / EARLY ACCESS */}
+      {/* COMPETITIVE EDGE */}
       <HalfImageSection
-        title="Our Competitive Edge"
+        title={t('sections.competitiveEdge.title')}
         text={[
-          "We chose Solana to launch our token because it can handle high transaction volumes quickly and inexpensively, ensuring an optimal user experience and a scalable network for the project’s growth.",
-          "Example: A token created on 07/04/2024 managed to increase its effective value by +54,000% in less than 20 days."
+          t('sections.competitiveEdge.text1'),
+          t('sections.competitiveEdge.text2'),
         ]}
         imgSrc="src/images/rocket.png"
         imagePosition="left"
@@ -142,7 +139,7 @@ export default function App() {
 
       <SectionDivider />
 
-      {/* Sezione Solana (già ampliata) */}
+      {/* SOLANA SECTION */}
       <SolanaSection />
 
       <SectionDivider />
@@ -150,27 +147,27 @@ export default function App() {
       {/* ROADMAP */}
       <section className="relative z-10 py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gold text-center mb-12">Roadmap</h2>
+          <h2 className="text-3xl font-bold text-gold text-center mb-12">
+            {t('roadmapSection.title')}
+          </h2>
           <Roadmap />
         </div>
       </section>
 
       <SectionDivider />
 
-      {/* CTA / COMMUNITY GROWTH */}
+      {/* CTA */}
       <section className="relative z-10 py-16 text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h3 className="text-2xl md:text-3xl font-bold text-gold mb-4">
-            Our Community Is Growing Fast
+            {t('cta.title')}
           </h3>
-          <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-            It’s time to take action. Join the Fair Launch on 
-            <strong> SolSale.app</strong> and be part of DMNS.
-            <br />
-            The DMNS token is now in Fair Launch.
-          </p>
+          <p
+            className="text-gray-700 text-lg mb-6 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: t('cta.text') }}
+          />
           <Button variant="primary" className="px-6 py-3">
-            Participate in Fair Launch
+            {t('cta.button')}
           </Button>
         </div>
       </section>
@@ -180,7 +177,7 @@ export default function App() {
       {/* FOOTER */}
       <footer className="relative z-10 py-8 text-center">
         <p className="text-gray-600 text-sm">
-          © 2025 DMNS. All rights reserved.
+          {t('footer.rights')}
         </p>
       </footer>
     </div>
