@@ -1,4 +1,5 @@
 // App.tsx
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -19,6 +20,9 @@ import diamondsLogo from './images/logo_solo.png';
 // Icone Lucide React
 import { Gem, Rocket, Users } from 'lucide-react';
 
+/**
+ * Componente di divider (linea + diamante) usato tra le sezioni
+ */
 function SectionDivider() {
   const { t } = useTranslation();
 
@@ -44,23 +48,51 @@ function SectionDivider() {
   );
 }
 
+/**
+ * Componente principale
+ */
 export default function App() {
   const { t } = useTranslation();
 
   return (
     <>
-      {/* Wrapper con lo sfondo gestito da Tailwind */}
-      <div className="
-  min-h-screen 
-  bg-fixed 
-  bg-cover
-  bg-center 
-  bg-no-repeat 
-  bg-[url('/images/background_mobile.png')]
-  md:bg-[url('/images/background.png')]
-">
+      {/* 
+        1) Div “fisso” in background per MOBILE
+           Visibile solo su schermi <768px (md:hidden)
+      */}
+      <div
+        className="
+          fixed 
+          inset-0
+          bg-cover bg-center bg-no-repeat
+          md:hidden
+          -z-10
+        "
+        style={{ backgroundImage: `url('/images/background_mobile.png')` }}
+      />
+
+      {/* 
+        2) Div “fisso” in background per DESKTOP
+           Visibile solo da 768px in su (hidden md:block)
+      */}
+      <div
+        className="
+          fixed 
+          inset-0
+          bg-cover bg-center bg-no-repeat
+          hidden md:block
+          -z-10
+        "
+        style={{ backgroundImage: `url('/images/background.png')` }}
+      />
+
+      {/* 
+        3) Contenuto principale, in “relative” con z-10
+           per stare davanti allo sfondo fisso
+      */}
+      <div className="relative z-10 min-h-screen flex flex-col">
         {/* HEADER */}
-        <header className="relative z-10 w-full max-w-7xl mx-auto px-6 py-4 flex justify-end items-center">
+        <header className="w-full max-w-7xl mx-auto px-6 py-4 flex justify-end items-center">
           <section className="relative z-10">
             <div className="max-w-7xl mx-auto px-6 flex justify-center items-center gap-8">
               {/* Link a X */}
@@ -107,7 +139,7 @@ export default function App() {
         </header>
 
         {/* HERO */}
-        <section className="relative z-10 py-16 text-center">
+        <section className="py-16 text-center">
           <div className="max-w-3xl mx-auto">
             <img
               src={logoSolo}
@@ -129,7 +161,7 @@ export default function App() {
         </section>
 
         {/* TOKEN STATS */}
-        <section className="relative z-10 py-16">
+        <section className="py-16">
           <div className="max-w-6xl mx-auto px-6">
             <TokenStats />
           </div>
@@ -144,7 +176,7 @@ export default function App() {
             t('sections.whoWeAre.text1'),
             t('sections.whoWeAre.text2'),
           ]}
-          imgSrc="/images/diamonds_Money.png" // <-- piccola immagine, import da src
+          imgSrc="/images/diamonds_Money.png"
           imagePosition="left"
           icon={<Users className="w-20 h-20 text-gold-solid mb-4" />}
           bgClass="bg-[#FAF4E8]"
@@ -159,7 +191,7 @@ export default function App() {
             t('sections.mission.text1'),
             t('sections.mission.text2'),
           ]}
-          imgSrc="/images/community.png" // <-- piccola immagine, import da src
+          imgSrc="/images/community.png"
           imagePosition="right"
           icon={<Gem className="w-20 h-20 text-gold-solid mb-4" />}
           bgClass="bg-[#FFFFFF]"
@@ -174,7 +206,7 @@ export default function App() {
             t('sections.competitiveEdge.text1'),
             t('sections.competitiveEdge.text2'),
           ]}
-          imgSrc="/images/rocket.png" // <-- piccola immagine, import da src
+          imgSrc="/images/rocket.png"
           imagePosition="left"
           icon={<Rocket className="w-20 h-20 text-gold-solid mb-4" />}
           bgClass="bg-[#FAF4E8]"
@@ -188,7 +220,7 @@ export default function App() {
         <SectionDivider />
 
         {/* ROADMAP */}
-        <section className="relative z-10 py-16">
+        <section className="py-16">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-gold text-center mb-12">
               {t('roadmapSection.title')}
@@ -200,7 +232,7 @@ export default function App() {
         <SectionDivider />
 
         {/* CTA */}
-        <section className="relative z-10 py-16 text-center">
+        <section className="py-16 text-center">
           <div className="max-w-3xl mx-auto px-4">
             <h3 className="text-2xl md:text-3xl font-bold text-gold mb-4">
               {t('cta.title')}
@@ -227,7 +259,7 @@ export default function App() {
         <SectionDivider />
 
         {/* SEZIONE SOCIAL */}
-        <section className="relative z-10 py-8">
+        <section className="py-8">
           <div className="max-w-7xl mx-auto px-6 flex justify-center gap-8">
             {/* Link a X */}
             <a
@@ -259,7 +291,7 @@ export default function App() {
         </section>
 
         {/* FOOTER */}
-        <footer className="relative z-10 py-8 text-center">
+        <footer className="py-8 text-center">
           <p className="text-gray-600 text-sm">
             {t('footer.rights')}
           </p>

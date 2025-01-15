@@ -29,12 +29,6 @@
     animation: float-slow 6s ease-in-out infinite;
   }
 
-  /* --------------------------------------------
-     Utility per sfondo responsive
-     Di default (mobile) -> background_mobile.png
-     Da md: in su (>=768px) -> background.png
-  ---------------------------------------------*/
 
-  
   
 }
