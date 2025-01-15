@@ -37,12 +37,12 @@
   .bg-custom {
     @apply relative min-h-screen text-gray-800 overflow-x-hidden
            bg-cover bg-center bg-no-repeat bg-fixed;
-    background-image: url("./src/images/background_mobile.png");
+    background-image: url("/images/background_mobile.png");
   }
 
   @screen md {
     .bg-custom {
-      background-image: url("./src/images/background.png");
+      background-image: url("/images/background.png");
     }
   }
 }
