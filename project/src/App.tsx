@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 // Componenti
+import { Loader } from './components/Loader';
 import { Button } from './components/Button';
 import { TokenStats } from './components/TokenStats';
 import { Roadmap } from './components/Roadmap';
@@ -46,6 +47,20 @@ function SectionDivider() {
 export default function App() {
   const { t } = useTranslation();
 
+  // Stato per mostrare/nascondere il Loader
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Callback che il loader chiama quando progress = 100%
+  const handleLoaderFinish = () => {
+    setIsLoading(false);
+  };
+
+  // Se stiamo ancora caricando, mostra solo il Loader
+  if (isLoading) {
+    return <Loader onFinish={handleLoaderFinish} />;
+  }
+
+  // Altrimenti, mostra il resto del sito
   return (
     <>
       {/* Sfondi mobile e desktop */}
@@ -75,6 +90,7 @@ export default function App() {
         <header className="w-full max-w-7xl mx-auto px-6 py-4 flex justify-end items-center">
           <section className="relative z-10">
             <div className="max-w-7xl mx-auto px-6 flex justify-center items-center gap-8">
+              {/* Link a X */}
               <a
                 href="https://x.com/DmnsGroup"
                 target="_blank"
@@ -87,6 +103,7 @@ export default function App() {
                   className="w-8 h-8 object-contain"
                 />
               </a>
+              {/* Link a Telegram */}
               <a
                 href="https://t.me/dmnstoken"
                 target="_blank"
@@ -99,6 +116,7 @@ export default function App() {
                   className="w-8 h-8 object-contain"
                 />
               </a>
+              {/* Link a SolSale */}
               <a
                 href="https://solsale.app/presale/6G1jXBziz5JJHUP88R9db2fG66fUWHDm56fAoGen7Dz8"
                 target="_blank"
@@ -148,9 +166,9 @@ export default function App() {
 
         {/* IFRAME */}
         <section className="py-16 px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6 text-center">
-              {t('iframe.title')}
-            </h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6 text-center">
+            {t('iframe.title')}
+          </h1>
           <div className="max-w-xl mx-auto bg-white rounded-xl shadow-md p-6">
             <iframe
               className="w-full h-[500px] rounded-lg overflow-hidden border-none"
@@ -165,7 +183,6 @@ export default function App() {
         <SectionDivider />
 
         {/* WHO WE ARE */}
-        {/* Se HalfImageSection di default ha "py-16", rimuovilo (py-0). */}
         <HalfImageSection
           title={t('sections.whoWeAre.title')}
           text={[
@@ -257,7 +274,7 @@ export default function App() {
         {/* SEZIONE SOCIAL */}
         <section className="py-8">
           <div className="max-w-7xl mx-auto px-6 flex justify-center gap-8">
-            {/* Link a X */}
+            {/* X */}
             <a
               href="https://x.com/DmnsGroup"
               target="_blank"
@@ -270,7 +287,7 @@ export default function App() {
                 className="w-8 h-8 object-contain"
               />
             </a>
-            {/* Link a Telegram */}
+            {/* Telegram */}
             <a
               href="https://t.me/dmnstoken"
               target="_blank"
