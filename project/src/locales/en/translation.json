@@ -13,7 +13,10 @@
     "button": {
       "fairLaunch": "Participate in Fair Launch"
     },
-  
+    "iframe": {
+      "title": "Our Fair Launch"
+    },
+    
     "tokenStats": {
       "totalSupplyTitle": "Total Supply",
       "totalSupplyValue": "1,000,000,000 DMNS",

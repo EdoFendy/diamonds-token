@@ -12,12 +12,17 @@
     "button": {
       "fairLaunch": "Partecipa al Fair Launch"
     },
-  
+    
+    "iframe": {
+      "title": "Il Nostro Fair Launch"
+    },
+
+
     "tokenStats": {
       "totalSupplyTitle": "Supply Totale",
       "totalSupplyValue": "1.000.000.000 DMNS",
       "fairLaunchTitle": "Fair Launch",
-      "fairLaunchDesc": "Grande Vantaggio",
+      "fairLaunchDesc": "Best Advantage",
       "communityTitle": "Community",
       "communityDesc": "100% Decentralizzata"
     },

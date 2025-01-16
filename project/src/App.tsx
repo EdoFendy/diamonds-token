@@ -1,5 +1,3 @@
-// App.tsx
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -10,7 +8,7 @@ import { Roadmap } from './components/Roadmap';
 import { HalfImageSection } from './components/HalfImageSection';
 import { SolanaSection } from './components/SolanaSection';
 
-// Import loghi (vengono da /src/images)
+// Import loghi
 import X_Logo from './images/X_logo.svg';
 import tg_logo from './images/tg_logo.png';
 import solsale from './images/solsale_logo.png';
@@ -20,14 +18,11 @@ import diamondsLogo from './images/logo_solo.png';
 // Icone Lucide React
 import { Gem, Rocket, Users } from 'lucide-react';
 
-/**
- * Componente di divider (linea + diamante) usato tra le sezioni
- */
 function SectionDivider() {
   const { t } = useTranslation();
 
   return (
-    <div className="my-12 flex items-center justify-center relative">
+    <div className="my-0 flex items-center justify-center relative">
       <div className="absolute w-full h-[2px] bg-[#d4af37]/40" />
       <div
         className="
@@ -48,18 +43,12 @@ function SectionDivider() {
   );
 }
 
-/**
- * Componente principale
- */
 export default function App() {
   const { t } = useTranslation();
 
   return (
     <>
-      {/* 
-        1) Div “fisso” in background per MOBILE
-           Visibile solo su schermi <768px (md:hidden)
-      */}
+      {/* Sfondi mobile e desktop */}
       <div
         className="
           fixed 
@@ -70,11 +59,6 @@ export default function App() {
         "
         style={{ backgroundImage: `url('/images/background_mobile.png')` }}
       />
-
-      {/* 
-        2) Div “fisso” in background per DESKTOP
-           Visibile solo da 768px in su (hidden md:block)
-      */}
       <div
         className="
           fixed 
@@ -86,16 +70,11 @@ export default function App() {
         style={{ backgroundImage: `url('/images/background.png')` }}
       />
 
-      {/* 
-        3) Contenuto principale, in “relative” con z-10
-           per stare davanti allo sfondo fisso
-      */}
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* HEADER */}
         <header className="w-full max-w-7xl mx-auto px-6 py-4 flex justify-end items-center">
           <section className="relative z-10">
             <div className="max-w-7xl mx-auto px-6 flex justify-center items-center gap-8">
-              {/* Link a X */}
               <a
                 href="https://x.com/DmnsGroup"
                 target="_blank"
@@ -108,7 +87,6 @@ export default function App() {
                   className="w-8 h-8 object-contain"
                 />
               </a>
-              {/* Link a Telegram */}
               <a
                 href="https://t.me/dmnstoken"
                 target="_blank"
@@ -121,7 +99,6 @@ export default function App() {
                   className="w-8 h-8 object-contain"
                 />
               </a>
-              {/* Link a SolSale */}
               <a
                 href="https://solsale.app/presale/6G1jXBziz5JJHUP88R9db2fG66fUWHDm56fAoGen7Dz8"
                 target="_blank"
@@ -169,7 +146,26 @@ export default function App() {
 
         <SectionDivider />
 
+        {/* IFRAME */}
+        <section className="py-16 px-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-gold mb-6 text-center">
+              {t('iframe.title')}
+            </h1>
+          <div className="max-w-xl mx-auto bg-white rounded-xl shadow-md p-6">
+            <iframe
+              className="w-full h-[500px] rounded-lg overflow-hidden border-none"
+              sandbox="allow-popups allow-same-origin allow-scripts allow-top-navigation allow-popups-to-escape-sandbox"
+              frameBorder="0"
+              scrolling="no"
+              src="https://solsale.app/embed/?address=6G1jXBziz5JJHUP88R9db2fG66fUWHDm56fAoGen7Dz8&bgColor=%2312181F&fgColor=%2312181f&hasAnimation=true&hasBanner=true&hasSocialLinks=true&network=999999&padding=30&refer=&responsive=true&saleType=presale&theme=custom&txtColor=%23FFFFFF"
+            />
+          </div>
+        </section>
+
+        <SectionDivider />
+
         {/* WHO WE ARE */}
+        {/* Se HalfImageSection di default ha "py-16", rimuovilo (py-0). */}
         <HalfImageSection
           title={t('sections.whoWeAre.title')}
           text={[
@@ -179,7 +175,7 @@ export default function App() {
           imgSrc="/images/diamonds_Money.png"
           imagePosition="left"
           icon={<Users className="w-20 h-20 text-gold-solid mb-4" />}
-          bgClass="bg-[#FAF4E8]"
+          bgClass="bg-[#FAF4E8] rounded-xl"
         />
 
         <SectionDivider />
@@ -194,7 +190,7 @@ export default function App() {
           imgSrc="/images/community.png"
           imagePosition="right"
           icon={<Gem className="w-20 h-20 text-gold-solid mb-4" />}
-          bgClass="bg-[#FFFFFF]"
+          bgClass="bg-[#FFFFFF] rounded-xl"
         />
 
         <SectionDivider />
@@ -209,7 +205,7 @@ export default function App() {
           imgSrc="/images/rocket.png"
           imagePosition="left"
           icon={<Rocket className="w-20 h-20 text-gold-solid mb-4" />}
-          bgClass="bg-[#FAF4E8]"
+          bgClass="bg-[#FAF4E8] rounded-xl"
         />
 
         <SectionDivider />
@@ -220,8 +216,8 @@ export default function App() {
         <SectionDivider />
 
         {/* ROADMAP */}
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-6">
+        <section className="py-16 px-6">
+          <div className="max-w-6xl mx-auto bg-white rounded-xl p-8 shadow-lg">
             <h2 className="text-3xl font-bold text-gold text-center mb-12">
               {t('roadmapSection.title')}
             </h2>
@@ -232,8 +228,8 @@ export default function App() {
         <SectionDivider />
 
         {/* CTA */}
-        <section className="py-16 text-center">
-          <div className="max-w-3xl mx-auto px-4">
+        <section className="py-16 text-center px-4">
+          <div className="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-lg">
             <h3 className="text-2xl md:text-3xl font-bold text-gold mb-4">
               {t('cta.title')}
             </h3>
