@@ -2,21 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Imposta il testo di base in grigio (#4A5568) */
+  body {
+    @apply text-gray-700;
+  }
+}
+
 @layer utilities {
   /* --------------------------------------------
-     Testo e colore gold, come già avevi prima 
+     Testo dorato con bordo nero sottile
   ---------------------------------------------*/
   .text-gold {
     @apply bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] bg-clip-text text-transparent;
+    text-shadow: 0 0 1px #000; /* BORDO NERO SOTTILE */
   }
   .text-gold-solid {
     color: #d4af37;
+    text-shadow: 0 0 1px #000; /* BORDO NERO SOTTILE */
   }
   .shadow-gold {
     @apply shadow-[0_0_20px_rgba(212,175,55,0.3)];
   }
 
-  /* Eventuali animazioni */
+  /* --------------------------------------------
+     Eventuali animazioni
+  ---------------------------------------------*/
   @keyframes float-slow {
     0%, 100% {
       transform: translateY(0);
@@ -28,7 +39,4 @@
   .animate-float-slow {
     animation: float-slow 6s ease-in-out infinite;
   }
-
-
-  
 }
